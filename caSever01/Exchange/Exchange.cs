@@ -8,9 +8,7 @@ namespace caSever01
         public abstract string Name { get; }
         public void UpdateProductsStat()
         {
-            Task.Run(() => {
-                ProcessProducts();
-            });
+            Task.Run(() => ProcessProducts());
         }
         protected abstract Product ToProduct(Object p);
         protected abstract void ProcessProducts();
