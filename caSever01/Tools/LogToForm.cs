@@ -1,15 +1,20 @@
-﻿public class Msg
+﻿namespace caSever01;
+
+public class Msg
 {
+    public int id;
     public int type;
     public string src = "";
     public string msg = "";
-    public Msg(int t, string s, string m)
+    public Msg(int t, string s, string m, int n = 0)
     {
-        type = t; src = s; msg = m;
+        type = t; src = s; msg = m; id = n;
     }
-    public static void Send(int t, string s, string m)
+    public static void Send(int t, int n, Product p)
     {
-        LogToForm.Write(new Msg(t, s, m));
+        string s = p.symbol,
+            m = $"v={p.volatility};\tl={p.liquidity};\tc1={p.cnt1};\tc2={p.cnt2};\tc3={p.cnt3}";
+        LogToForm.Write(new Msg(t, s, m, n));
     }
 }
 class LogToForm

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtLog = new System.Windows.Forms.TextBox();
             this.txtLog1 = new System.Windows.Forms.TextBox();
             this.txtLog2 = new System.Windows.Forms.TextBox();
+            this.txtLog3 = new System.Windows.Forms.TextBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -44,33 +44,33 @@
             // 
             // txtLog
             // 
-            this.txtLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtLog.Location = new System.Drawing.Point(3, 3);
-            this.txtLog.Multiline = true;
-            this.txtLog.Name = "txtLog";
-            this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLog.Size = new System.Drawing.Size(665, 508);
-            this.txtLog.TabIndex = 0;
-            // 
-            // txtLog1
-            // 
             this.txtLog1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtLog1.Location = new System.Drawing.Point(3, 3);
             this.txtLog1.Multiline = true;
-            this.txtLog1.Name = "txtLog1";
+            this.txtLog1.Name = "txtLog";
             this.txtLog1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtLog1.Size = new System.Drawing.Size(665, 508);
             this.txtLog1.TabIndex = 0;
             // 
-            // txtLog2
+            // txtLog1
             // 
             this.txtLog2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtLog2.Location = new System.Drawing.Point(3, 3);
             this.txtLog2.Multiline = true;
-            this.txtLog2.Name = "txtLog2";
+            this.txtLog2.Name = "txtLog1";
             this.txtLog2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtLog2.Size = new System.Drawing.Size(665, 508);
             this.txtLog2.TabIndex = 0;
+            // 
+            // txtLog2
+            // 
+            this.txtLog3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLog3.Location = new System.Drawing.Point(3, 3);
+            this.txtLog3.Multiline = true;
+            this.txtLog3.Name = "txtLog2";
+            this.txtLog3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtLog3.Size = new System.Drawing.Size(665, 508);
+            this.txtLog3.TabIndex = 0;
             // 
             // btnStart
             // 
@@ -101,7 +101,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.txtLog);
+            this.tabPage1.Controls.Add(this.txtLog1);
             this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tabPage1.Location = new System.Drawing.Point(4, 41);
             this.tabPage1.Name = "tabPage1";
@@ -113,7 +113,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.txtLog1);
+            this.tabPage2.Controls.Add(this.txtLog2);
             this.tabPage2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tabPage2.Location = new System.Drawing.Point(4, 41);
             this.tabPage2.Name = "tabPage2";
@@ -125,7 +125,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.txtLog2);
+            this.tabPage3.Controls.Add(this.txtLog3);
             this.tabPage3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tabPage3.Location = new System.Drawing.Point(4, 41);
             this.tabPage3.Name = "tabPage3";
@@ -158,9 +158,9 @@
 
         #endregion
 
-        private TextBox txtLog;
         private TextBox txtLog1;
         private TextBox txtLog2;
+        private TextBox txtLog3;
         private Button btnStart;
         private TabControl tabControl1;
         private TabPage tabPage1;

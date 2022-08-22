@@ -32,17 +32,18 @@ namespace caSever01
             var r = client.SpotApi.ExchangeData.GetSymbolsAsync().Result;
             if (r.Success)
             {
+                int i = 0;
                 foreach (var p in r.Data)
                 {
                     if (p.State == SymbolState.Online)
                     {
                         Product product = ToProduct(p);
+
                         List<Kline> klines = GetKlines(p.Name, 1, 5);
-                        if (klines.Count > 0)
-                        {
-                            product.CalcStat(klines);
-                            product.SaveStat();
-                        }
+                        product.CalcStat(klines);
+                        product.SaveStat();
+
+                        Msg.Send(ID, ++i, product);
                         Thread.Sleep(1000);
                     }
                 }
@@ -63,15 +64,10 @@ namespace caSever01
             if (r.Success)
             {
                 klines = r.Data.ToList();
-
-                if (klines.Count == 0)
-                {
-                    Msg.Send(3, $"GetProductStat({symbol})", "i==0");
-                }
             }
             else
             {
-                Msg.Send(3, $"GetProductStat({symbol})", r.Error!.Message);
+                LogToForm.Write(new Msg(ID, $"GetProductStat({symbol})", r.Error!.Message));
             }
             return klines;
         }

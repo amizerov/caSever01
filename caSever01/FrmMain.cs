@@ -17,20 +17,20 @@ namespace caSever01
         void Progress(Msg msg)
         {
             string m =
-                $"[{DateTime.Now.ToString("hh:mm:ss")}]\t{msg.src.PadLeft(15, '-')}\t{msg.msg}\r\n";
+                $"{msg.id}: [{DateTime.Now.ToString("hh:mm:ss")}]\t{msg.src.PadLeft(15, '-')}\t{msg.msg}\r\n";
 
             Invoke(new Action(() =>
             {
                 switch (msg.type)
                 {
                     case 1:
-                        txtLog.Text = m + txtLog.Text;
-                        break;
-                    case 2:
                         txtLog1.Text = m + txtLog1.Text;
                         break;
-                    case 3:
+                    case 2:
                         txtLog2.Text = m + txtLog2.Text;
+                        break;
+                    case 3:
+                        txtLog3.Text = m + txtLog3.Text;
                         break;
                 }
             }));
